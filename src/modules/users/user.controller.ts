@@ -1,10 +1,9 @@
-import { Request, Response } from "express";
 import { UserService } from "./user.service";
 
 export class UserController {
   constructor(private userService: UserService) {}
 
-  async getAllUsers(req: Request, res: Response) {
+  async getAllUsers(req: any, res: any) {
     try {
       const users = await this.userService.getAllUsers();
       res.json(users);
@@ -14,7 +13,7 @@ export class UserController {
     }
   }
 
-  async getUserById(req: Request, res: Response) {
+  async getUserById(req: any, res: any) {
     try {
       const user = await this.userService.getUserById(req.params.id);
       if (!user) {
@@ -27,7 +26,7 @@ export class UserController {
     }
   }
 
-  async createUser(req: Request, res: Response) {
+  async createUser(req: any, res: any) {
     try {
       const user = await this.userService.createUser(req.body);
       res.status(201).json(user);
@@ -36,7 +35,7 @@ export class UserController {
     }
   }
 
-  async updateUser(req: Request, res: Response) {
+  async updateUser(req: any, res: any) {
     try {
       const user = await this.userService.updateUser(req.params.id, req.body);
       if (!user) {
@@ -49,7 +48,7 @@ export class UserController {
     }
   }
 
-  async deleteUser(req: Request, res: Response) {
+  async deleteUser(req: any, res: any) {
     try {
       const result = await this.userService.deleteUser(req.params.id);
       if (!result) {

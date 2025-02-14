@@ -24,6 +24,8 @@
   "homepage": "https://github.com/alperbayram/crypto-price-alert#readme",
   "description": "",
   "dependencies": {
+    "@types/amqplib": "^0.10.6",
+    "amqplib": "^0.10.5",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
